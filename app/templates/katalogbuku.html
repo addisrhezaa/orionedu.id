@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main id="main">
+    
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <h2>Katalog</h2>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+  
+  <!-- ======= Portfoio Section ======= -->
+  <section id="portfolio" class="portfoio">
+    <div class="container" data-aos="fade-up">
+
+
+      <div class="row portfolio-container">
+        {% for i in buku %}
+        <div class="col-lg-3 col-md-6 portfolio-item">
+          <img src="{% static i.gambar.url %}" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>{{i.judul}}</h4>
+            <p>{{i.penulis}}<p>
+            <a href="{% static i.gambar.url %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link"><i class="bx bx-plus"></i></a>
+            <a href="{% url 'detailbuku' i.id_buku %}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+    </div>
+  </section><!-- End Portfoio Section -->
+
+</main><!-- End #main -->
+{% endblock content %}

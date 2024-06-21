@@ -1,0 +1,432 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Orion : Peralatan Pendidikan</title>
+  <meta name="google-site-verification" content="V3DI8NzONnwwxn6_QKkt_o0zEx_b22IxNzcMG9bmL-8" />
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/logo.png' %}" rel="icon">
+  <link href="{% static 'assets/img/logo.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Anyar
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/anyar-free-multipurpose-one-page-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">info.orionperaga@gmail.com</a>
+        <i class="bi bi-phone-fill phone-icon"></i>0813 1318 8851
+      </div>
+      <div class="cta d-none d-md-block">
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#loginModal">
+          Login
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="">CV ORION</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
+          <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
+          <li class="dropdown"><a href="#"><span>Katalog</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'katalogbuku' %}">Buku dan Atlas</a></li>
+              <li><a href="{% url 'katalogpeta' %}">Peta</a></li>
+              <li><a href="{% url 'kataloganatomi' %}">Anatomi</a></li>
+              <li><a href="{% url 'katalogpeta' %}">Olahraga</a></li>
+              <li><a href="{% url 'kataloganatomi' %}">Meubel</a></li>
+              <li><a href="{% url 'katalogpaud' %}">Peralatan PAUD</a></li>
+              <li><a href="{% url 'katalogsd' %}">Peralatan SD</a></li>
+              <li><a href="{% url 'katalogsmp' %}">Peralatan SMP</a></li>
+              <li><a href="{% url 'katalogsma' %}">Peralatan SMA</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Belanja</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="https://e-katalog.lkpp.go.id/id/search-produk?authenticityToken=e72f4cbe5a1e7bfe5566fe5ec31876a213c1b698&q=logo+O&order=relevance&limit=12&offset=1">E-Katalog</a></li>
+              <li><a href="https://www.tokopedia.com/oriontritan">Tokopedia</a></li>
+              <li><a href="https://shopee.co.id/peragaorion_22">Shopee</a></li>
+              <li><a href="https://bit.ly/3n32oXO">SIPLah Temprina</a></li>
+              <li><a href="https://siplah.tokoladang.co.id/official-store/orion.1080">SIPLah Toko Ladang</a></li>
+              <li><a href="https://www.mbizmarket.co.id/p/orionperaga/catalog">Mbizmarket</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Blog</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Galery</a></li>
+              <li><a href="https://www.youtube.com/watch?v=Cbqg3RnW0ss">Kampanye Sekolah Sehat</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex justify-cntent-center align-items-center">
+    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+      
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2>Selamat Datang di Orion Online</h2>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Icon Boxes Section ======= -->
+    <section id="icon-boxes" class="icon-boxes">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4 class="title"><a href="">PAUD & TK</a></h4>
+              <p class="description">Pendidikan Anak Usia Dini dan Taman Kanak Kanak</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-backpack"></i></div>
+              <h4 class="title"><a href="">SD / MI</a></h4>
+              <p class="description">Sekolah Dasar / Madrasah Ibtidaiyah</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-backpack2"></i></div>
+              <h4 class="title"><a href="">SMP / MTs</a></h4>
+              <p class="description">Sekolah Menengah Pertama / Madrasah Tsanawiyah</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-backpack4"></i></div>
+              <h4 class="title"><a href="">SMA / SMK / MA</a></h4>
+              <p class="description">Sekolah Menengah Atas / Sekolah Menengah Kejuruan / Madrasah Aliyah</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Icon Boxes Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Tentang Kami</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col">
+            <p>
+            <strong>CV. ORION</strong> adalah perusahaan yang bergerak dibidang produsen dan distributor alat peraga pendidikan, berdiri pada tahun 2002. Kami memproduksi berbagai macam alat peraga pendidikan mulai dari PAUD, TK, SD/MI, SMP/MTS, SMA/MA maupun SMK
+            </p>
+            <strong>VISI</strong>
+            <p>
+            Menjadi Produsen alat peraga pendidikan dengan layanan terbaik dengan harga yang kompetitif.
+            </p>
+            <strong>MISI</strong>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Menyediakan alat peraga pendidikan yang berkualitas dan bermutu. </li>
+              <li><i class="ri-check-double-line"></i> Membantu para guru dan siswa untuk memahami materi pendidikan yang sedang diajarkan menjadi mudah dan senang dengan bantuan alat peraga pendidikan.</li>
+              <li><i class="ri-check-double-line"></i> Meningkatkan mutu dan kualitas pendidikan di Indonesia</li>
+            </ul>
+            <a href="#" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container-fluid">
+
+        <div class="row">
+
+          <div class="col-lg-5 align-items-stretch position-relative video-box" style='background-image: url("static/assets/img/kantor.jpg");' data-aos="fade-right">
+          </div>
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch" data-aos="fade-left">
+
+            <div class="content">
+              <h3>Mengapa harus<strong> Orion ?</strong></h3>
+            </div>
+
+            <div class="accordion-list">
+              <ul>
+                <li data-aos="fade-up" data-aos-delay="100">
+                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Inovatif dan Berkualitas <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                    <p>
+                      Kami terus melakukan pengembangan untuk membuat produk-produk yang mendukung kurikulum pendidikan terkini. Dengan demikian pelanggan yakin bahwa alat peraga pendidikan dari perusahaan kami dapat mendukung proses belajar mengajar sesuai kurikulum yang berlaku yang bermutu dan berkualitas.
+                    </p>
+                  </div>
+                </li>
+
+                <li data-aos="fade-up" data-aos-delay="200">
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Harga yang Kompetitif <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Slogan ini menekankan pada komitmen kami untuk menyediakan barang dengan harga yang terjangkau dan kompetitif. Kami berupaya untuk memberikan nilai terbaik kepada pelanggan/konsumen dengan menawarkan produk-produk dengan harga yang sesuai.
+                    </p>
+                  </div>
+                </li>
+
+                <li data-aos="fade-up" data-aos-delay="300">
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Layanan Terbaik <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Slogan ini menekankan pada komitmen kami untuk memberikan kepuasan kepada pelanggan/konsumen dengan berfokus pada produk dan pelayanan yang berkualitas unggul.
+                    </p>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+    
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Hubungi Kami</h2>
+        </div>
+
+        <div class="row mt-1 d-flex justify-content-end" data-aos="fade-right" data-aos-delay="100">
+
+          <div class="col-lg-5">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Alamat :</h4>
+                <p>Office : Jl. Fiberglass 199 Kletek Taman Sidoarjo</p>
+                <p>Senin - Jumat : 08.00-17.00 WIB</p>
+                <p>Sabtu - Minggu : LIBUR</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>info.orionperaga@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Kontak</h4>
+                <p>No.Telp : 031 58255008 - 9</p>
+                <p>Whatsapp : 081313188851</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="100">
+
+            <form method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h4>Hubungi Kami</h4>
+            <p>
+              <strong>Office :</strong><br>
+              Jl. Fiberglass 199 Kletek Taman Sidoarjo <br><br>
+              <strong>Telepon:</strong> 031 58255008 - 9<br>
+              <strong>Whatsapp:</strong> 0813 1318 8851<br>
+              <strong>Email:</strong> info.orionperaga@gmail.com<br><br>
+              <strong>Jam Operasional :</strong><br>
+              Senin - Jumat : 08.00-17.00 WIB<br>
+              Sabtu - Minggu : LIBUR<br>
+            </p>
+
+          </div>
+          
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Info Pengiriman</h4>
+            <img src="{% static 'assets/img/Logo 5 Bank.png' %}" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Info Pembayaran</h4>
+            <img src="{% static 'assets/img/Logo 6 Xpdc.png' %}" alt="" class="img-fluid">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Orion</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/anyar-free-multipurpose-one-page-bootstrap-theme/ -->
+        Designed by <a>LOSIK TI UB</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+    <!-- The Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <ol>
+        <li><a href="home">Beranda</a></li>
+        <li>Detail Produk</li>
+      </ol>
+      <h2>Detail Produk</h2>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Portfolio Details Section ======= -->
+  <section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-4">
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <div>
+                <img src="{% static buku.gambar.url %}" alt="">
+              </div>          
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3>Informasi Produk</h3>
+            <ul>
+              <li><strong>Judul</strong>: {{buku.judul}}</li>
+              <li><strong>Penerbit</strong>: {{buku.penerbit}}</li>
+              <li><strong>Penulis</strong>: {{buku.penulis}}</li>
+              <li><strong>Editor</strong>: {{buku.editor}}</li>
+              <li><strong>Ukuran</strong>: {{buku.ukuran}}</li>
+              <li><strong>Halaman</strong>: {{buku.halaman}} hal</li>
+              <li><strong>Harga</strong>: Rp{{buku.harga|intcomma}}</li>
+              <li><strong>Stok</strong>: {{buku.stok}}</li>
+              <li ><strong>Link</strong>: <a href="{{buku.link}}">E-Katalog</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3>Deskripsi</h3>
+            <p>{{buku.deskripsi}}</p>
+          </div>
+        </div>
+
+        <div class="portfolio-description">
+          <h2>Sinopsis</h2>
+          <p >{{buku.sinopsis}}</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Portfolio Details Section -->
+
+</main><!-- End #main -->
+{% endblock content %}

@@ -1,0 +1,89 @@
+{% extends "admin/adminbase.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4 mb-4">
+    <table id="myTable" class="display">
+        <thead>
+            <tr>
+                <th>Kategori</th>
+                <th>Nama Produk</th>
+                <th>Unit</th>
+                <th>Harga</th>
+                <th>Stok</th>
+                <th>Link</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in alat %}
+            <tr>
+                <td>{{i.kategori}}</td>
+                <td>{{i.nama_peralatan}}</td>
+                <td>{{i.unit}}</td>
+                <td>{{i.harga}}</td>
+                <td>{{i.stok}}</td>
+                <td><a href="{{i.link}}">E-Katalog</a></td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        data-image="{% static i.gambar.url %}"
+                        data-desc="{{i.deskripsi}}"> 
+                        Detail
+                    </button>
+                    <a href="{% url 'updatealat' i.id_peralatan_pendidikan %}">
+                        <button type="button" class="btn btn-warning">Update</button>
+                    </a>
+                    <a href="{% url 'deletealat' i.id_peralatan_pendidikan %}">
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Produk</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="modal-image" src="" alt="Book Image" class="img-fluid">
+                </div>
+                <div class="col-md-6 ">
+                    <h5>Deskripsi</h5>
+                    <p id="modal-desc"></p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    var exampleModal = document.getElementById('exampleModal');
+    exampleModal.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        var button = event.relatedTarget;
+        // Extract info from data-* attributes
+        var imageSrc = button.getAttribute('data-image');
+        var descSrc = button.getAttribute('data-desc');
+        // Update the modal's image
+        var modalImage = exampleModal.querySelector('#modal-image');
+        var modalDesc = exampleModal.querySelector('#modal-desc');
+        modalImage.src = imageSrc;
+        modalDesc.textContent = descSrc;
+    });
+});
+</script>
+    
+{% endblock content %}
